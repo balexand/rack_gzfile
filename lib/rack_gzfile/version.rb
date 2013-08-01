@@ -1,0 +1,3 @@
+module RackGzfile
+  VERSION = "0.0.1"
+end
