@@ -1,5 +1,2 @@
-require "rack_gzfile/version"
-
-module RackGzfile
-  # Your code goes here...
-end
+require "rack/gz_file"
+require "rack/gz_file/version"
