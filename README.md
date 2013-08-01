@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/balexand/rack_gzfile.png)](https://travis-ci.org/balexand/rack_gzfile)
+
 # RackGzfile
 
 By default, `rake assets:precompile` generates gzipped versions of certain types of files. Servers (like Nginx with the GzipStatic module) can then serve these gzipped assets so they can get the reduced bandwidth of gzip without needing to compress the file on every request. [This pull request](https://github.com/rack/rack/pull/479) will hopefully bring this functionality to Rack. In the meantime, this gem can be used.
