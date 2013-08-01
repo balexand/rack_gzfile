@@ -18,19 +18,7 @@ And then execute:
 
 ### Usage with `Rack::Static`
 
-Unfortunately, `Rack::Static` is hardcoded to use `Rack::File`. [Hopefully this will be changed](https://github.com/rack/rack/pull/479#issuecomment-21907789), but in the meantime you can do an ugly monkey patch like this:
-
-```ruby
-Rack::Static.class_eval do
-  def initialize_with_gzip_file_server(app, options={})
-    initialize_without_gzip_file_server(app, options)
-
-    root = options[:root] || Dir.pwd
-    @file_server = Rack::GzFile.new(root, @headers)
-  end
-  alias_method_chain :initialize, :gzip_file_server
-end
-```
+By default, this gem monkey patches `Rack::Static` to use gzip. All that you need to do is require the gem.
 
 ## Contributing
 
